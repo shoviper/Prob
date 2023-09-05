@@ -1,0 +1,34 @@
+# HW 1 Empirical Probability
+# Inthat Sappipat 65011304
+
+options(scipen = 999) # set the display format for large numbers
+
+findfive <- function(s){ # create function named findfive to find the probability
+    # of getting 5 when roll a dcie s times
+    
+    output <- sample(1:6, s ,replace = T) # create a variable named output to random 
+    # the number 1 to 6 like rolling a dice
+    
+    event = sum(output == 5) # create a statement to detect a random number that is 5
+    # and store the amount of 5 that come out when roll a dice s times
+    
+    prob <- event / s # create a variable named prob to store the probability of getting
+    # 5 when roll a dice s times
+    
+    different <- abs(prob - (1/6)) # create a variable named different to store the 
+    #difference between the probability and 1/6
+    
+    cat("rolling = ", s, "\n", "Probability of getting 5 = ", prob, "\n") # show the output of
+    # number of rolls and
+    # probability of 
+    # getting 5
+    
+    cat("Difference = ", different, "\n\n") # show the output of the difference 
+    # between the probability and 1/6
+}
+
+findfive(1000) # roll a dice 1000 times
+
+findfive(100000) # roll a dice 100000 times
+
+findfive(1000000) # roll a dice 1000000 times

@@ -1,0 +1,18 @@
+findpi <- function(n){
+  set.seed(304)
+  x = runif(n,min=0,max=1)
+  y = runif(n)
+  r = sqrt((x^2)+(y^2))
+  num.circle.dots = sum(r<=1)
+  num.square.dots = n
+  ratio = num.circle.dots/num.square.dots
+  my.pi = 4 * ratio
+  my.pi
+  different = abs(my.pi - 3.14159)
+  cat("The Value of pi:", my.pi, "\n")
+  cat("The difference from 3.14159:", different, "\n")
+  plot(x,y,col=ifelse(r<=1,"red","blue"),asp=1,pch=20)
+}
+findpi(500000)
+findpi(1000000)
+findpi(2000000)

@@ -1,0 +1,96 @@
+options(scipen = 999) # set the display format for large numbers
+
+1.Mass Probability
+mass_prob <- function(){ # create a function named mass_prob to calculate 
+                         # the mass probability
+  
+  set.seed(304) # set seed to ensure that the random numbers generated
+                # will be the same in each time
+  
+  p <- 0.1 # create a variable name p to store the probability of error that is 0.1
+  
+  n <- 4 # create a variable name n to store the number of bit transmitted that is 4
+  
+  outcomes <- 0:n # create a variable name outcomes to store the all possible outcomes
+  
+  prob <- dbinom(outcomes, size = n, prob = p) # calculate the mass probability 
+                                               # for all outcomes
+  
+  cat("The mass probabilities of all possible outcomes are", prob) # show the output of 
+                                                                   # the mass probability 
+                                                                   # for all outcomes
+}
+
+mass_prob() # run the function
+
+2.Mean and Varaince
+mean_var <- function(){ # create a function name mean_var to calculate 
+                        # the mean and the variance of this distribution
+  
+  set.seed(304) # set seed to ensure that the random numbers generated
+                # will be the same in each time
+  
+  p <- 0.1 # create a variable name p to store the probability of error that is 0.1
+  
+  n <- 4 # create a variable name n to store the number of bit transmitted that is 4
+  
+  num_sim <- 100000 # create a variable name num_sim to store the number of simulations
+  
+  sim_data <- rbinom(num_sim, size = n, prob = p) # simulate 100000 sets of 4 bits transmission
+  
+  m <- mean(prob) # calculate the mean
+  
+  v <- var(prob) # calculate the variance
+  
+  cat("The mean of this distribution is", m, "\n") # show the output of the mean
+  
+  cat("The variance of this distribution is", v) # show the output of the variance
+  
+}
+
+mean_var() # run the function
+
+3.Probability that the most error is 3
+most_three <- function(){ # create a function name most_three to calculate 
+                          # the probability that the most errors is 3
+  
+  set.seed(304) # set seed to ensure that the random numbers generated
+                # will be the same in each time
+  
+  p <- 0.1 # create a variable name p to store the probability of error that is 0.1
+  
+  n <- 4 # create a variable name n to store the number of bit transmitted that is 4
+  
+  prob_mostthree <- pbinom(3, size = n, prob = p) # calculate the probability that
+                                                  # the most errors is 3
+  
+  cat("The probability that the most error are 3 is", prob_mostthree) # show the output
+                                                                      # of the probability
+                                                                      # that the most
+                                                                      # errors is 3
+  
+}
+
+most_three() # run the function
+
+4.Barplot
+bar <- function(){ # create a function name bar to show the bar graph of this distribution
+  
+  set.seed(304) # set seed to ensure that the random numbers generated
+                # will be the same in each time
+  
+  p <- 0.1 # create a variable name p to store the probability of error that is 0.1
+  
+  n <- 4 # create a variable name n to store the number of bit transmitted that is 4
+  
+  outcomes <- 0:n # create a variable name outcomes to store the all possible outcomes
+  
+  prob <- dbinom(outcomes, size = n, prob = p) # calculate the mass probability 
+                                               # for all outcomes
+  
+  barplot(prob,names.arg = outcomes , col = "darkred", main = "Probability Distribution", 
+          xlab = "Number of Errors", ylab = "Probability") # plot the var graph
+  
+}
+
+bar() # run the function
