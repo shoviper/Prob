@@ -1,0 +1,26 @@
+options(scipen = 999) # set the display format for large numbers
+
+most_three <- function(){ # create a function name most_three to calculate 
+  # the probability that the most errors is 3
+  
+  set.seed(304) # set seed to ensure that the random numbers generated
+  # will be the same in each time
+  
+  p <- 0.1 # create a variable name p to store the probability of error that is 0.1
+  
+  n <- 4 # create a variable name n to store the number of bit transmitted that is 4
+  
+  max <- 3 # Set the maximum number of errors to find the probability wanted
+  
+  prob_max_three <- pbinom(max, size = n, prob = p) # calculate the probability that
+                                                    # the number of errors is less than 
+                                                    # or equal to the maximum number of errors
+  
+  cat("The probability that the most error are 3 is", prob_max_three) # show the output
+                                                                      # of the probability
+                                                                      # that the most
+                                                                      # errors is 3
+  
+}
+
+most_three() # run the function

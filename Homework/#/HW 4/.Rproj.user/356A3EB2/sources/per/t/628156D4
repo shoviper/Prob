@@ -1,0 +1,25 @@
+{
+    "id": "628156D4",
+    "path": null,
+    "project_path": null,
+    "type": "r_code_browser",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1690297066516.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "context": ".GlobalEnv:::emp_rule_nor"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 25896157426352239,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1690297066516,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,34 @@
+# HW 6 Mean and Variance of Conditional Joint Probability Function
+# Inthat Sappipat 65011304
+
+options(scipen = 999) # set the display format for large numbers
+
+con_mean_var <- function(x) { # create a function named con_mean_var to find the conditional 
+                              # mean and variance of Y when X = x
+  
+  joint <- matrix(c(0.01, 0.02, 0.02, 0.15, 0.02, 0.03, 0.10, 0.10, 0.25, 0.20, 0.05, 0.05), 
+                  nrow = 4, ncol = 3, dimnames = list(c("y1", "y2", "y3", "y4"), 
+                  c("x1", "x2", "x3"))) # Create a matrix named joint to show a conditional  
+                                        # joint probability distribution
+  
+  y = c(1, 2, 3, 4) # create a variable named y to store array of 1,2,3,4
+  
+  prob = apply(joint, 2, sum) # create a variable named prob to calculate the marginal
+                              # probabilities
+  
+  con_prob = joint[,x] / prob[x] # create a variable named con_prob to calculate the
+                                 # conditional probabilities
+  
+  mean = sum(y * con_prob) # calculate the mean
+  
+  var = sum((y - mean) ^ 2 * con_prob) # calculate the variance
+  
+  cat("E( Y|x =", x, ") = ", mean, "\n") # show the output of mean
+  
+  cat("Var( Y|x =", x, ") = ", var, "\n") # show the output of variance
+  
+}
+
+con_mean_var(1) #run the function with x = 1
+con_mean_var(2) #run the function with x = 2
+con_mean_var(3) #run the function with x = 3

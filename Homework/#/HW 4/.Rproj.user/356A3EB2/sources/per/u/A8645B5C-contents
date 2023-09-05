@@ -1,0 +1,28 @@
+function(m,sd){ # create a function name emp_rule_nor to confirm 
+  # the Empirical Rule of Normal which can be used 
+  # for all normal distributions
+  
+  set.seed(304) # set seed to ensure that the random numbers generated
+  # will be the same in each time
+  
+  x <- rnorm(10000000, m, sd) # generate random samples from the normal distribution
+  
+  proportion_one <- (sum(abs(x - m) < sd)) / 10000000 # calculate the proportion 
+  # within the first sd
+  
+  proportion_two <- (sum(abs(x - m) < 2 * sd)) / 10000000 # calculate the proportion 
+  # within the second sd
+  
+  proportion_three <- (sum(abs(x - m) < 3 * sd)) / 10000000 # calculate the proportion 
+  # within the third sd
+  
+  cat("Proportion within 1 standard deviation = ", proportion_one, 
+      "\nProportion within 2 standard deviation = ", proportion_two,
+      "\nProportion within 3 standard deviation = ", proportion_three) # show the output of
+  # the proportions
+  # within the first,
+  # second, and third sd
+  
+}
+
+emp_rule_nor(3,2) # run the function with mean = 3 and sd = 2
