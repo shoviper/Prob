@@ -1,0 +1,47 @@
+# HW 5 Continuous Distributions
+# Inthat Sappipat 65011304
+
+options(scipen = 999)
+
+cont_dis <- function() {
+  
+  set.seed(304)
+  
+  #Q6
+  shape <- 1
+  scale <- 300
+  time <- 240
+  prob6 <- 1 - pweibull(time,shape,scale)
+  print(prob6)
+  
+  #Q7
+  alpha <- 2
+  beta <- 3
+  time <- 2 / 2.5
+  prob7 <- 1 - pbeta(time,alpha,beta)
+  print(prob7)
+  
+  #Q8
+  mean <- 6
+  rate <- 1 / mean
+  time <- 3
+  prob8 <- pexp(time,rate = rate)
+  print(prob8)
+  
+  #Q9
+  mean <- 7000
+  sd <- 600
+  x <- 5800
+  z <- (x - mean) / sd
+  prob9 <- pnorm(z)
+  print(prob9)
+  
+  #Q10
+  theta <- 0.5
+  omega <- 1
+  time <- 10
+  prob10 <- 1 - plnorm(time,meanlog = theta,sdlog = omega)
+  print(prob10)
+}
+
+cont_dis()

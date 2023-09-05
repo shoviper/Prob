@@ -1,0 +1,38 @@
+# HW 7 Mean as a balance point
+# Inthat Sappipat 65011304
+
+options(scipen = 999) # set the display format for large numbers
+
+my.mean <- function(){ # create a function named my.mean to calculate the mean of dataset
+                       # using the sum of differences always be zero at the mean point
+  
+  data <- c(4.9, 6.8, 1.3, 7.4, 2.5) # create a variable named data to store element in
+                                     # the dataset
+  
+  n <- length(data) # create a variable named n to count the number of the element in dataset
+  
+  mean_arith <- mean(data) # create a variable name mean_arith to calculate the arithmetic
+                           # mean of the data set
+  
+  sum_diff <- 0 # create a variable named sum_diff to store the sum of the difference mean 
+  
+  for (i in 1:n) { # loop from 1 to the number of element in dataset
+    
+    diff <- data[i] - mean_arith # create a variable named diff to store the difference
+                                 # between the i element of the dataset and the arithmetic
+                                 # mean
+    
+    sum_diff <- sum_diff + diff # create a variable named sum_diff to accumulate the
+                                # differences
+  }
+  
+  mymean <- mean_arith + sum_diff / n # calculate the adjusted mean
+  
+  builtinmean <- mean(data) #calculate the mean of dataset using built-in function
+  
+  cat("My.mean = ", round(mymean, 2), "\n",     
+      "Built-in mean = ", round(builtinmean, 2)) # show the output of the 2 means
+
+}
+
+my.mean() # run the function
