@@ -1,0 +1,27 @@
+my.mode <- function(data) {
+  
+  freq_table <- table(data)
+  
+  max_freq <- max(freq_table)
+  
+  if (max_freq == 1) {
+    cat("Result: no mode", "\n")
+  } else if ((all(freq_table == max_freq)) && length(unique(data)) >= 2) {
+    cat(" Result: no mode", "\n")
+  } else {
+    modes <- names(freq_table[freq_table == max_freq])
+    cat("Result:", modes, "\n")
+  }
+}
+
+dataset1 <- c(1, 2, 3, 4, 5)
+dataset2 <- c(3, 3, 3, 3, 3)
+dataset3 <- c(1, 2, 2, 3, 4, 4, 5)
+dataset4 <- c(1, 1, 2, 2, 3, 3, 4, 4, 5)
+dataset5 <- c(1, 1, 2, 2, 3, 3, 4, 4, 5, 5)
+
+modedataset1 <- my.mode(dataset1)
+modedataset2 <- my.mode(dataset2)
+modedataset3 <- my.mode(dataset3)
+modedataset4 <- my.mode(dataset4)
+modedataset5 <- my.mode(dataset5)
