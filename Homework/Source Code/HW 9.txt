@@ -1,0 +1,15 @@
+# HW 9 Parameter Estimation
+# Inthat Sappipat 65011304
+
+wb <- rweibull(n = 400, shape = 9, scale = 5) # create a variable named wb to generate the
+                                              # weibull sample data with 400 data points
+                                              # shape 9 and scale 5
+
+df <- data.frame(wb) # create a variable named df to create a data drame
+
+path <- "C:\\Users\\sho\\OneDrive\\Achive of Shogun\\Software Engineer KMITL\\Year 2
+          \\Semester 1\\Probability and statistics\\Homework\\CSV\\wdata.csv"
+        # create a variable name path to store a location of a path that will use to store
+        # the csv file
+
+write.csv(df, file = path, row.names = FALSE) # create a csv file and store in a defined path
